@@ -1,0 +1,17 @@
+CREATE TABLE player (
+	nickname character varying(40) ,
+	password character varying(40) NOT NULL,
+	PRIMARY KEY(nickname)
+);
+
+CREATE TABLE characters (
+	nome character varying(40) NOT NULL,
+	alinhamento character varying(40),
+	idade integer NOT NULL,
+	xp integer,
+	money integer,
+	codc integer,
+	nickname character varying(40),
+	PRIMARY KEY(codc),
+	FOREIGN KEY (nickname) REFERENCES player(nickname)
+);
